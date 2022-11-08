@@ -1,0 +1,22 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abitsalihu/portfolio.git"
+  },
+  "author": "abi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abitsalihu/portfolio/issues"
+  },
+  "homepage": "https://github.com/abitsalihu/portfolio#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.3"
+  }
+}
