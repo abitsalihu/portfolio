@@ -26,9 +26,10 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 
-  font-family: sans-serif;
+
   font-family: "Raleway", sans-serif;
-  // font-family: 'Island Moments', cursive;
+
+
   overflow-x: hidden;
   position: relative;
 
@@ -36,9 +37,13 @@ body {
   // background-size: cover;
   // background-repeat: no-repeat;
   // background-position:center;
+  
   display: flex;
   justify-content: center;
   background: #000000;
+}
+::-webkit-scrollbar{
+  display:none;
 }
 img,
 picture,
@@ -96,6 +101,9 @@ link{
 
     width: .5px;
     background-color: #4a4949;
+
+
+    opacity: .3;
 }
 
 
@@ -103,16 +111,20 @@ link{
   margin-top: 20px;
   width: 85%;
   height: 100px;
-  border: 1px solid red;
+
   color: #f5f5f5;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 2;
+  position: sticky;
+  position: fixed;
+  top: 0;
+
 
 
   &_logo{
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: 800;
   
   }
@@ -133,4 +145,46 @@ link{
       background: #f5f5f5;
     }
   }
+
+  &_lc{
+
+
+    &--language{
+      display: flex;
+
+      align-items: center;
+
+      &-btn{
+        font-size: 1.25rem;
+        border: none;
+        color: #f5f5f5;
+        background: none;
+        border-bottom: 1px solid #f5f5f5;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+
+        &:nth-child(3){
+          border: none;
+        }
+      }
+      // &-a{
+      //   font-size: 1.25rem;
+      //   border: none;
+      //   color: #f5f5f5;
+      //   background: none;
+      //   cursor: pointer;
+
+      //   letter-spacing: 1.5px;
+      // }
+      &-s{
+        font-size: 1.25rem;
+        margin: 0px 5px;
+        
+
+      }
+    }
+
+  }
 }
+
+
