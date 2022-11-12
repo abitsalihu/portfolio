@@ -11,6 +11,7 @@ const heroFooterRight = document.querySelector(".hero_footer__right");
 const aboutWord = document.querySelector(".aboutWord")
 const loadSection = document.querySelector(".load")
 const projectSection = document.querySelector(".projects") 
+const contactSection = document.querySelector(".contact")
 const changeModeBtn = document.querySelectorAll(".nav_lc--mode-btn");
 
 console.log(changeModeBtn)
@@ -18,10 +19,12 @@ let words = ["look beautiful!", "are complex!", "tell a story!", "are thoughtful
 
 const changeWord = function(){
     
-    let randomNumber = Math.round((Math.random() * 9));  
+    let randomNumber = Math.round((Math.random() * 8));  
     let randomWord = words[randomNumber];
-
+    
+    console.log( randomNumber ,words[randomNumber])
     aboutWord.textContent = `${randomWord}`
+
 }
 
 
@@ -40,6 +43,9 @@ window.addEventListener("scroll", function(){
     aboutSection.style.transform = `translateY(-${userYposition}px)`
     projectSection.style.transition = `transform ease`;
     projectSection.style.transform = `translateY(-${userYposition}px)`
+
+    contactSection.style.transition = `transform ease`;
+    contactSection.style.transform = `translateY(-${userYposition}px)`
 })
 
 changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
@@ -73,6 +79,11 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     projectSection.classList.remove("dark-mode");
     projectSection.classList.add(`${mode}`);
 
+    contactSection.classList.remove("dark-mode");
+    contactSection.classList.add(`${mode}`);
+
+    
+
   
     document.querySelectorAll(".nav_menu--line").forEach((e) => {
         e.style.backgroundColor = `#000000`
@@ -101,6 +112,9 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     projectSection.classList.remove("light-mode");
     projectSection.classList.add(`${mode}`);
 
+    contactSection.classList.remove("light-mode");
+    contactSection.classList.add(`${mode}`);
+
     document.querySelectorAll(".nav_menu--line").forEach((e) => {
         e.style.backgroundColor = `#f5f5f5`
     })
@@ -119,12 +133,13 @@ setTimeout(() => {
 },11750);
 
 setTimeout(() => {
-    body.style.height = `auto`;
+    body.style.height = `150%`;
 },11000);
 
 setTimeout(() => {
     aboutSection.style.display = `flex`
     projectSection.style.display = `flex`
+    contactSection.style.display = `flex`
 }, 11000);
 
 setTimeout(() => {

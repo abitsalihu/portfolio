@@ -1,10 +1,10 @@
 //! COLORS
 
-$landing-color: #f5f5f5;
 $landing-color: #000000;
+$landing-color: #f5f5f5;
 
-$black-color: #000000;
 $black-color: #f5f5f5;
+$black-color: #000000;
 
 $purple-color: #7743DB;
 
@@ -64,8 +64,8 @@ body {
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
 
-  cursor:url('/img/black-cursor.png'), auto;
   cursor:url('/img/white-cursor.png'), auto;
+  cursor:url('/img/black-cursor.png'), auto;
 
   background-color: $landing-color;
   position: relative;
@@ -310,7 +310,7 @@ link{
           background: none;
           cursor: pointer;;
 
-          &:nth-child(2){
+          &:nth-child(1){
             display: none;
           }
         }
@@ -351,8 +351,8 @@ link{
 
     display: flex;
     align-items: flex-end;
-  font-family: "ClashDisplay-m";
-  font-family: 'DM Sans', sans-serif;
+  font-family: "ClashDisplay";
+
 
   // transition: all 1s ease;
   // font-size: 72px;
@@ -383,7 +383,7 @@ link{
     align-items: center;
     // font-family: "Gunterz";
     font-family: 'DM Sans', sans-serif;
-    font-family: "ClashDisplay";
+    // font-family: "ClashDisplay";
 
 
 
@@ -391,6 +391,7 @@ link{
     & > h1 {
       font-size: 18rem;
       letter-spacing: 12px;
+      font-weight: 800;
       // text-transform: uppercase;
       // border: 1px solid red;
       // display: none;
@@ -496,7 +497,8 @@ link{
     color: $black-color;
 
     display: none;
-    cursor: pointer;
+    // cursor: pointer;
+    // border: 1px solid red;
     
 
     &__me{
@@ -540,6 +542,7 @@ link{
 
   .projects{
     margin-top: 175px;
+    // margin-bottom: -400px;
     color: $black-color;
     display: flex;
     flex-direction: column;
@@ -559,7 +562,9 @@ link{
     font-weight: 800;
     text-transform: uppercase;
     color: $purple-color;
-    font-family: "ClashDisplay";
+
+    font-family: 'DM Sans', sans-serif;
+
     background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -604,6 +609,45 @@ link{
 
   }
 
+  }
+
+  .contact {
+    margin-top: 200px;
+    // border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $black-color;
+    text-align: left;
+    display: none;
+
+
+    &_con{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    & > h3 {
+      // border: 1px solid red;
+      font-size: 2rem;
+      font-weight: 300;
+      text-align: left;
+    }
+
+    & > a, & > a:active, & > a:focus {
+      // border: 1px solid red;
+      background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+      font-size: 7rem;
+      font-weight: 700;
+      cursor: pointer;
+      
+      
+    }
+  }
   }
 
   .aboutWord{
