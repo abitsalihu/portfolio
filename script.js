@@ -10,24 +10,27 @@ const heroFooterLeft = document.querySelector(".hero_footer__left");
 const heroFooterRight = document.querySelector(".hero_footer__right");
 const aboutWord = document.querySelector(".aboutWord")
 const loadSection = document.querySelector(".load")
-const projectSection = document.querySelector(".projects") 
-const contactSection = document.querySelector(".contact")
+const projectSection = document.querySelector(".projects"); 
+const contactSection = document.querySelector(".contact");
+const footerSection = document.querySelector(".footer")
 const changeModeBtn = document.querySelectorAll(".nav_lc--mode-btn");
+const footerIcons = document.querySelectorAll(".footer__con-icon");
 
-console.log(changeModeBtn)
+
 let words = ["look beautiful!", "are complex!", "tell a story!", "are thoughtful!", "show creativity!", "are unique!", "work well!", "don't suck!", "inspire people!"]
 
+
+// ! FUNCTIONS
 const changeWord = function(){
     
     let randomNumber = Math.round((Math.random() * 8));  
     let randomWord = words[randomNumber];
-    
-    console.log( randomNumber ,words[randomNumber])
     aboutWord.textContent = `${randomWord}`
 
 }
 
 
+// ! EVENT LISTENERS
 
 window.addEventListener("scroll", function(){
     let userYposition = window.pageYOffset;
@@ -39,23 +42,22 @@ window.addEventListener("scroll", function(){
     heroFooterRight.style.transform = `translateX(${userYposition}px)`
 
 
-    aboutSection.style.transition = `transform ease`;
-    aboutSection.style.transform = `translateY(-${userYposition}px)`
-    projectSection.style.transition = `transform ease`;
-    projectSection.style.transform = `translateY(-${userYposition}px)`
+    // aboutSection.style.transition = `transform ease`;
+    // aboutSection.style.transform = `translateY(-${userYposition}px)`
+    // projectSection.style.transition = `transform ease`;
+    // projectSection.style.transform = `translateY(-${userYposition}px)`
 
-    contactSection.style.transition = `transform ease`;
-    contactSection.style.transform = `translateY(-${userYposition}px)`
+    // contactSection.style.transition = `transform ease`;
+    // contactSection.style.transform = `translateY(-${userYposition}px)`
+
+    // footerSection.style.transform =`transform ease`;
+    // footerSection.style.transform = `translateY(-${userYposition}px)`
 })
 
 changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     const mode =  e.target.getAttribute("data-mode");
-    // const nextBtn = e.target.getAttribute("data-btn");
 
     e.target.style.display = "none";
-    // document.querySelector(`.${nextBtn}`).style.display = "flex";
-    // console.log(document.querySelector(`.${nextBtn}`));
-    
 
     if(mode === "light-mode"){
         console.log("dark-mode")
@@ -82,7 +84,12 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     contactSection.classList.remove("dark-mode");
     contactSection.classList.add(`${mode}`);
 
-    
+
+    footerIcons.forEach((e) => {
+        e.style.fill = `#000000`
+    })
+
+    console.log(footerIcons)
 
   
     document.querySelectorAll(".nav_menu--line").forEach((e) => {
@@ -115,12 +122,21 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     contactSection.classList.remove("light-mode");
     contactSection.classList.add(`${mode}`);
 
+    footerIcons.forEach((e) => {
+        e.style.fill = `#f5f5f5`
+    })
+
+    console.log(footerIcons)
+
     document.querySelectorAll(".nav_menu--line").forEach((e) => {
         e.style.backgroundColor = `#f5f5f5`
     })
 
     }
 })});
+
+
+// ! TIMEOUTS -- INTERVALS
 
 setTimeout(() => {
     frontEndTitle.style.animation = `none`
@@ -140,6 +156,7 @@ setTimeout(() => {
     aboutSection.style.display = `flex`
     projectSection.style.display = `flex`
     contactSection.style.display = `flex`
+    footerSection.style.display = `flex`
 }, 11000);
 
 setTimeout(() => {

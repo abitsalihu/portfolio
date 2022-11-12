@@ -1,45 +1,45 @@
 //! COLORS
 
-$landing-color: #000000;
 $landing-color: #f5f5f5;
+$landing-color: #000000;
 
-$black-color: #f5f5f5;
 $black-color: #000000;
+$black-color: #f5f5f5;
 
 $purple-color: #7743DB;
 
 
-@font-face {
-  font-family: "Gunterz";
-  src: url("/fonts/Gunterz-Medium.otf") format("opentype");
-}
+// @font-face {
+//   font-family: "Gunterz";
+//   src: url("/fonts/Gunterz-Medium.otf") format("opentype");
+// }
 
-@font-face {
-  font-family: "Kola";
-  src: url("/fonts/BespokeStencil-Bold.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: "Kola";
+//   src: url("/fonts/BespokeStencil-Bold.otf") format("opentype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
-@font-face {
-  font-family: "BlueCashews";
-  src: url("/fonts/BlueCashews.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "ClashDisplay";
-  src: url("/fonts/ClashDisplay-Bold.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: "BlueCashews";
+//   src: url("/fonts/BlueCashews.otf") format("opentype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: "ClashDisplay";
+//   src: url("/fonts/ClashDisplay-Bold.otf") format("opentype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
-@font-face {
-  font-family: "ClashDisplay-m";
-  src: url("/fonts/ClashDisplay-Regular.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: "ClashDisplay-m";
+//   src: url("/fonts/ClashDisplay-Regular.otf") format("opentype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
 *,
 *::before,
 *::after {
@@ -54,6 +54,7 @@ body {
   font-size: 62.5%;
   // height: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 body {
   line-height: 1.5;
@@ -64,8 +65,8 @@ body {
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
 
-  cursor:url('/img/white-cursor.png'), auto;
-  cursor:url('/img/black-cursor.png'), auto;
+  // cursor:url('/img/white-cursor.png'), auto;
+  // cursor:url('/img/black-cursor.png'), auto;
 
   background-color: $landing-color;
   position: relative;
@@ -194,7 +195,7 @@ link{
     background-color: #4a4949;
     transform-origin: top;
     transform: scaleY(0%);
-    opacity: .5;
+    opacity: .75;
     animation: lineShow 1.5s ease-out forwards 4.5s, opacityLow 1s ease forwards 8s;
 
     &:nth-child(2){
@@ -297,25 +298,17 @@ link{
   }
 
   &_lc{
+    &--mode{
+      &-btn{
+        border: none;
+        background: none;
+        cursor: pointer;;
 
-
-
-
-
-      &--mode{
-
-        
-        &-btn{
-          border: none;
-          background: none;
-          cursor: pointer;;
-
-          &:nth-child(1){
+        &:nth-child(2){
             display: none;
-          }
         }
       }
-
+    }
   }
 }
 
@@ -330,7 +323,7 @@ link{
   width: 85%;
   height: 82.25%;
   z-index: 2;
-  font-family: "ClashDisplay";
+  // font-family: "ClashDisplay";
   overflow: hidden;
 
 
@@ -345,13 +338,13 @@ link{
     padding-left: 25px;
     margin-bottom: -25px;
     font-weight: 100;
-    color: $purple-color;
+    // color: $purple-color;
     // color: #E0144C;
     // color:#8D72E1;
 
     display: flex;
     align-items: flex-end;
-  font-family: "ClashDisplay";
+  // font-family: "ClashDisplay";
 
 
   // transition: all 1s ease;
@@ -373,7 +366,7 @@ link{
   }
   &_title{
     overflow: hidden;
-
+    
     width: 100%;
     height: 60%;
     // border: 1px solid red;
@@ -490,11 +483,12 @@ link{
 
 
     padding: 25px;
-
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     color: $black-color;
+    z-index: 10;
 
     display: none;
     // cursor: pointer;
@@ -502,7 +496,7 @@ link{
     
 
     &__me{
-      // cursor: pointer;
+      cursor: pointer;
       margin-top: 100px;
 
       text-align: left;
@@ -517,7 +511,8 @@ link{
 
       &--link{
         
-
+        // border: 1px solid blue;
+        height: 40px;
         margin-top: 50px;
         cursor: pointer;
 
@@ -541,9 +536,12 @@ link{
   }
 
   .projects{
+    position: relative;
     margin-top: 175px;
     // margin-bottom: -400px;
     color: $black-color;
+    z-index: 2;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -562,9 +560,7 @@ link{
     font-weight: 800;
     text-transform: uppercase;
     color: $purple-color;
-
-    font-family: 'DM Sans', sans-serif;
-
+    // font-family: "ClashDisplay";
     background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -586,6 +582,10 @@ link{
         // border: 1px solid red;
         font-weight: 800;
         font-size: 2rem;
+
+        &-f{
+          font-weight: 100;
+        }
       }
       &--img{
         width: 450px;
@@ -612,13 +612,18 @@ link{
   }
 
   .contact {
-    margin-top: 200px;
-    // border: 1px solid red;
+    position: relative;
+    margin-top: 150px;
+    // margin-bottom: -800px;
+    // border: 1px solid green;
     display: flex;
     justify-content: center;
+    gap: 10px;
     align-items: center;
     color: $black-color;
-    text-align: left;
+    // text-align: left;
+  z-index: 2;
+
     display: none;
 
 
@@ -626,28 +631,78 @@ link{
     display: flex;
     flex-direction: column;
     align-items: center;
+    // border: 1px solid blue;
 
 
     & > h3 {
       // border: 1px solid red;
       font-size: 2rem;
       font-weight: 300;
-      text-align: left;
+      // text-align: left;
     }
+    
+  }
+  }
 
-    & > a, & > a:active, & > a:focus {
-      // border: 1px solid red;
-      background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-decoration: none;
-      font-size: 7rem;
-      font-weight: 700;
-      cursor: pointer;
-      
-      
+  .footer{
+    position: relative;
+    z-index: 2;
+
+    margin-top: 200px;
+    // border: 1px solid red;
+    // margin-bottom: -200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    
+    &__con{
+      width: 300px;
+      height: 100px;
+      display: flex;
+      // border: 1px solid blue;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      & > a{
+        transition: all .5s ease;
+        font-size: 3rem;
+        // border: 1px solid red;
+        // height: 300px;
+        &:hover{
+          transform: scale(1.2);
+        }
+      }
+
+      &-icon{
+        width: 35px;
+        height: 35px;
+        fill: #f5f5f5;
+        transition: fill .5s ease;
+
+  
+      }
     }
   }
+
+  #contact-link{
+    // border: 1px solid red;
+    margin-top: -5px;
+    font-size: 8rem;
+
+    & > button {
+      font-size: 10rem;
+      // border: 1px solid blue;
+    }
+  }
+
+  .divider{
+    background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+    background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .aboutWord{
@@ -923,10 +978,10 @@ link{
 
 @keyframes opacityLow {
   0%{
-    opacity: 0.5;
+    opacity: 0.75;
   }
   100%{
-    opacity: 0.35;
+    opacity: 0.5;
   }
 }
 
