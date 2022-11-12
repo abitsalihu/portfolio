@@ -69,6 +69,10 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     developerTitle.classList.remove("dark-mode")
     developerTitle.classList.add(`${mode}`)
 
+
+    projectSection.classList.remove("dark-mode");
+    projectSection.classList.add(`${mode}`);
+
   
     document.querySelectorAll(".nav_menu--line").forEach((e) => {
         e.style.backgroundColor = `#000000`
@@ -93,6 +97,9 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
 
     developerTitle.classList.remove("light-mode");
     developerTitle.classList.add(`${mode}`);
+
+    projectSection.classList.remove("light-mode");
+    projectSection.classList.add(`${mode}`);
 
     document.querySelectorAll(".nav_menu--line").forEach((e) => {
         e.style.backgroundColor = `#f5f5f5`

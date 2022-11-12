@@ -382,8 +382,8 @@ link{
     justify-content: center;
     align-items: center;
     // font-family: "Gunterz";
-  font-family: 'DM Sans', sans-serif;
-  font-family: "ClashDisplay";
+    font-family: 'DM Sans', sans-serif;
+    font-family: "ClashDisplay";
 
 
 
@@ -468,9 +468,9 @@ link{
           &:hover, &:hover > a{
 
 
-    background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
           }
 
           &:hover > .line{
@@ -527,14 +527,7 @@ link{
           font-weight: 800;
           transition: all .5s ease;
           &:hover{
-            color: $black-color;
             transform: translateY(-5px);
-          }
-
-          &:hover > .line{
-            // margin-top: -7px;
-            transform: scaleX(100%);
-            // background-color: $black-color;
           }
 
         }
@@ -549,11 +542,13 @@ link{
     margin-top: 175px;
     color: $black-color;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 25px;
     // text-align: center;
     display: none;
+    // border: 1px solid red;
 
 
 
@@ -568,6 +563,45 @@ link{
     background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  &__con{
+    margin-top: 70px;
+    width: 85%;
+    // height: 400px;
+    // border: 1px solid red;
+
+    &_f{
+      display: flex;
+      gap: 20px;
+      justify-content: flex-end;
+
+
+      &--stats{
+        // border: 1px solid red;
+        font-weight: 800;
+        font-size: 2rem;
+      }
+      &--img{
+        width: 450px;
+        height: 400px;
+        border-radius: 5px;
+        // border: 1px solid blue;
+        transition: all 1s ease;
+        // filter: grayscale(1);
+
+        &:hover{
+          transform: scale(1.05);
+        // filter: grayscale(0);
+
+        }
+      }
+    }
+    &_s{
+      display: flex;
+      gap: 20px;
+    }
+
   }
 
   }

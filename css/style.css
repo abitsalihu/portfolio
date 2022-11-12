@@ -320,15 +320,13 @@ link {
         font-weight: 800;
         transition: all .5s ease; }
         .about__me--link-btn:hover {
-          color: #f5f5f5;
           transform: translateY(-5px); }
-        .about__me--link-btn:hover > .line {
-          transform: scaleX(100%); }
 
 .projects {
   margin-top: 175px;
   color: #f5f5f5;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 25px;
@@ -342,6 +340,26 @@ link {
     background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
+  .projects__con {
+    margin-top: 70px;
+    width: 85%; }
+    .projects__con_f {
+      display: flex;
+      gap: 20px;
+      justify-content: flex-end; }
+      .projects__con_f--stats {
+        font-weight: 800;
+        font-size: 2rem; }
+      .projects__con_f--img {
+        width: 450px;
+        height: 400px;
+        border-radius: 5px;
+        transition: all 1s ease; }
+        .projects__con_f--img:hover {
+          transform: scale(1.05); }
+    .projects__con_s {
+      display: flex;
+      gap: 20px; }
 
 .aboutWord {
   color: #7743DB;
