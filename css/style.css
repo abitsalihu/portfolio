@@ -237,6 +237,7 @@ link {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'DM Sans', sans-serif;
     font-family: "ClashDisplay"; }
     .hero_title > h1 {
       font-size: 18rem;
