@@ -20,7 +20,8 @@ const footerSection = document.querySelector(".footer")
 const changeModeBtn = document.querySelectorAll(".nav_lc--mode-btn");
 const footerIcons = document.querySelectorAll(".footer__con-icon");
 const navLinks = document.querySelectorAll(".nav_content_m-link");
-
+const navLine = document.querySelectorAll(".nav-line");
+const navContent = document.querySelector(".nav_content")
 
 //! ARRAY FOR ABOUT ME SECTION -- WORD CHANGE
 let words = ["look beautiful!", "are complex!", "tell a story!", "are thoughtful!", "show creativity!", "are unique!", "work well!", "don't suck!", "inspire people!"]
@@ -62,7 +63,28 @@ window.addEventListener("scroll", function(){
 
 menu.addEventListener("click", () => {
     nav.classList.toggle("menu-active")
-    body.classList.toggle("body-menu-active")
+    body.classList.toggle("body-menu-active");
+    
+    if(nav.classList.contains("menu-active")){
+        setTimeout(()=>{
+            navContent.classList.add("content-display")
+        },1000)
+        setTimeout(()=>{
+            navLinks.forEach((e) => {
+                e.style.animation = `loadUp .5s ease forwards`;
+                // e.style.opacity = `1`
+            })
+        }, 1000)
+    } else {
+
+            navLinks.forEach((e)=> {
+                e.style.animation = "hideStuff 0.05s ease"
+            })
+            setTimeout(()=>{
+        navContent.classList.remove("content-display")
+    },100)
+        
+    }
 })
 
 changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
@@ -95,15 +117,21 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     contactSection.classList.remove("dark-mode");
     contactSection.classList.add(`${mode}`);
 
+    
+
 
     footerIcons.forEach((e) => {
         e.style.fill = `#000000`
-    })
+    });
 
 
     navLinks.forEach((e)=> {
         e.style.color = `#000000`
-    })
+    });
+
+    navLine.forEach((e)=> {
+        e.style.backgroundColor = '#000000'
+    });
 
     console.log(navLinks)
 
@@ -146,7 +174,10 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
         e.style.color = `#f5f5f5`
     })
 
-    console.log(footerIcons)
+    navLine.forEach((e)=> {
+        e.style.backgroundColor = '#f5f5f5'
+    });
+
 
     document.querySelectorAll(".nav_menu--line").forEach((e) => {
         e.style.backgroundColor = `#f5f5f5`
