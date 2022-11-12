@@ -72,17 +72,21 @@ menu.addEventListener("click", () => {
         setTimeout(()=>{
             navLinks.forEach((e) => {
                 e.style.animation = `loadUp .5s ease forwards`;
-                // e.style.opacity = `1`
             })
-        }, 1000)
-    } else {
+        }, 1000);
+        
+        document.querySelector("#nav_content_l-icons").style.animation = `loadLeft 1s ease forwards`
+        document.querySelector("#nav_content_l-resume").style.animation = `loadRight 1s ease forwards`
 
+        
+    } else {
             navLinks.forEach((e)=> {
                 e.style.animation = "hideStuff 0.05s ease"
             })
             setTimeout(()=>{
         navContent.classList.remove("content-display")
     },100)
+
         
     }
 })
@@ -205,6 +209,11 @@ setTimeout(() => {
 
 setTimeout(() => {
     aboutSection.style.display = `flex`;
+    aboutSection.style.animation = `loadUp 1s ease forwards`;
+}, 9750);
+
+setTimeout(() => {
+    // aboutSection.style.display = `flex`;
     projectSection.style.display = `flex`;
     contactSection.style.display = `flex`;
     footerSection.style.display = `flex`;

@@ -245,7 +245,7 @@ link{
 
 .nav{
   // margin-top: 20px;
-
+  overflow: hidden;
   width: 85%;
   height: 100px;
   transition: all 1s ease !important;
@@ -253,10 +253,11 @@ link{
   
   // color: $landing-color;
   color: $black-color;
+  // border: 1px solid red;
 
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
   z-index: 999;
   position: fixed;
@@ -323,7 +324,7 @@ link{
   &_content{
     // border: 1px solid red;
     width: 100%;
-    height: 80vh;
+    height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -332,11 +333,7 @@ link{
     transition: display 1s ease;
     // opacity: 0;
 
-    &_l{
-      width: 100%;
-      height: 20%;
-      // border: 1px solid blue;
-    }
+    
 
     &_m{
       width: 100%;
@@ -379,12 +376,25 @@ link{
         }
       }
     }
-
-    &_r{
-      width: 30%;
-      height: 100%;
+    &_l{
+      width: 100%;
+      height: 20%;
       // border: 1px solid blue;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // opacity: 0;
+
+      & #nav_content_l-icons{
+        width: 125px;
+        height: 75px;
+        // border: 1px solid red;
+        justify-content: start;
+        // padding-left: 10px;
+      }
     }
+
+   
   }
 }
 
@@ -570,6 +580,9 @@ link{
     display: none;
     // cursor: pointer;
     // border: 1px solid red;
+
+    opacity: 0;
+    // animation: loadDown 1s ease forwards 9.75s;
     
 
     &__me{
@@ -620,7 +633,7 @@ link{
     // margin-bottom: -400px;
     color: $black-color;
     z-index: 2;
-
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1101,15 +1114,129 @@ link{
   }
 }
 
+
+
 //! MEDIA QUERIES
 
-@media screen and (max-width:400px){
-  .load{
-    
+@media screen and(max-width:650px) {
 
+  .load{
     &_con{
       flex-direction: column;
     }
   }
-}
 
+
+  .nav{
+    width: 100%;
+  }
+  .menu-active{
+    height: 100vh;
+  }
+
+  .hero{
+    margin-top: 270px;
+    &_name{
+      height: 7.5%;
+      font-size: 1.2rem;
+      padding-left: 5px;
+      margin-bottom: 0px;
+    }
+    &_title{
+      width: 100%;
+      gap: 30px;
+        & > h1 {
+          font-size:6rem;
+          letter-spacing: 0px;
+        }
+        & > h2 {
+          font-size: 4.5rem;
+        }
+      }
+      &_footer{
+        margin-top: 50px;
+        padding: 5px;
+        &__left{
+          font-size: 1.5rem;
+        }
+        &__right{
+          align-self: center;
+          padding-right: 0px;
+          &--resume{
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+
+    .about{
+      &__me{
+
+        &--p{
+          font-size: 3rem;
+          text-align: center;
+        }
+  
+        &--link{
+          display: flex;
+          justify-content: center;
+        }
+  
+      }
+  
+  
+    }
+  
+
+  .projects{
+    margin-top: 50px;
+    text-align: center;
+    flex-direction: column;
+    padding: 10px;
+    &__title{
+      font-size: 3rem;
+    }
+    &__con{
+      &_f{
+        flex-direction: column;
+        justify-content: flex-end;
+        &--img{
+          width: 100%;
+          height: auto;
+        }
+      }
+      &_s{
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  }
+  .footer{
+    margin-top: 100px;
+    &__con{
+      align-items: center;
+      display: flex;
+      & > a{
+        font-size: 1.75rem;
+        margin-bottom: 0px;
+        }
+      &-icon{
+        width: 22.5px;
+        height: 22.5px;
+      }
+    }
+  }
+  .contact {
+    margin-top: 100px;
+    // height: 200px;
+  }
+
+  #contact-link > button {
+    font-size: 5rem;
+  }
+
+  .arrow{
+    width: 30px;
+    height: 30px;
+  }
+}
