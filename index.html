@@ -43,22 +43,6 @@
 
     <div class="landing-page">
 
-        <!-- <div class="bg">
-            <div class="bg_line"></div>
-            <div class="bg_line"></div>
-    
-    
-    
-            <div class="bg_line"></div>
-            <div class="bg_line"></div>
-            <div class="bg_line"></div>
-            <div class="bg_line"></div>
-            <div class="bg_line"></div>
-            <div class="bg_line"></div>
-            <div class="bg_line"></div>
-            <div class="bg_line"></div>
-        </div> -->
-
     <nav class="nav">
         <div class="nav_logo">AS</div>
         <div class="nav_menu">
@@ -67,10 +51,15 @@
 
         </div>
         <div class="nav_lc">
-            <div class="nav_lc--language">
-                <button class="nav_lc--language-btn english">ENG</button>
-                <div class="nav_lc--language-s">/</div>
-                <button class="nav_lc--language-btn albanian">ALB</button>
+            <div class="nav_lc--mode">
+                <button class="nav_lc--mode-btn lighter" data-mode="light-mode" data-btn="darker">
+                <svg class="sun"><use xlink:href="img/sprite.svg#icon-sun"></use></svg>
+                </button>
+                <button class="nav_lc--mode-btn darker" data-mode="dark-mode" data-btn="lighter">
+                    <svg class="moon"><use xlink:href="img/sprite.svg#icon-moon"></use></svg>
+                    </button>
+
+                
             </div>
         </div>
     </nav>
@@ -80,8 +69,8 @@
             <h2>Abit Salihu</h2>
         </div>
         <div class="hero_title">
-            <h1>Frontend</h1>
-            <h2>Developer</h2>
+            <h1 class="frontend">Frontend</h1>
+            <h2 class="developer">Developer</h2>
         </div>
         <div class="hero_footer">
             <div class="hero_footer__left">
@@ -92,11 +81,37 @@
                 </div>
             </div>
             <div class="hero_footer__right">
-                <button class="hero_footer__right--resume"><a href="/cv.pdf" download="/cv.pdf"> CV </a><span class="line"></span></button>
+                <button class="hero_footer__right--resume"><a href="/cv.pdf" download="/cv.pdf">CV</a><span class="line"></span></button>
             </div>
 
         </div>
+
+        
     </section>
     </div>
+
+    <div class="about">
+        <div class="about__me">
+            <p class="about__me--p">
+                Hey, I'm Abit, and 
+                <span>I like to create</span> 
+                <span>websites that</span>
+                <span class="aboutWord">anything!</span>
+            </p>
+
+            <div class="about__me--link">
+                <button class="hero_footer__right--resume about__me--link-btn"><a>About me</a><span class="line"></span></button>
+                <!-- <button class="about__me--link-btn">About me</button> -->
+            </div>
+        </div>
+    </div>
+
+    <section class="projects">
+        <div class="projects__title">
+            <h2>My Projects</h2>
+        </div>
+    </section>
+
+    <script src="/script.js"></script>
 </body>
 </html>
