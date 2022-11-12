@@ -1,7 +1,11 @@
 "use strict"
 
+//! DOM QUERY SELECTORS TO MANIPULATE
+
 const body = document.querySelector("body");
+
 const nav = document.querySelector(".nav")
+const menu = document.querySelector(".nav_menu")
 const aboutSection = document.querySelector(".about");
 const heroName = document.querySelector(".hero_name");
 const frontEndTitle = document.querySelector(".frontend");
@@ -15,8 +19,10 @@ const contactSection = document.querySelector(".contact");
 const footerSection = document.querySelector(".footer")
 const changeModeBtn = document.querySelectorAll(".nav_lc--mode-btn");
 const footerIcons = document.querySelectorAll(".footer__con-icon");
+const navLinks = document.querySelectorAll(".nav_content_m-link");
 
 
+//! ARRAY FOR ABOUT ME SECTION -- WORD CHANGE
 let words = ["look beautiful!", "are complex!", "tell a story!", "are thoughtful!", "show creativity!", "are unique!", "work well!", "don't suck!", "inspire people!"]
 
 
@@ -54,6 +60,11 @@ window.addEventListener("scroll", function(){
     // footerSection.style.transform = `translateY(-${userYposition}px)`
 })
 
+menu.addEventListener("click", () => {
+    nav.classList.toggle("menu-active")
+    body.classList.toggle("body-menu-active")
+})
+
 changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     const mode =  e.target.getAttribute("data-mode");
 
@@ -89,7 +100,12 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
         e.style.fill = `#000000`
     })
 
-    console.log(footerIcons)
+
+    navLinks.forEach((e)=> {
+        e.style.color = `#000000`
+    })
+
+    console.log(navLinks)
 
   
     document.querySelectorAll(".nav_menu--line").forEach((e) => {
@@ -126,6 +142,10 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
         e.style.fill = `#f5f5f5`
     })
 
+    navLinks.forEach((e)=> {
+        e.style.color = `#f5f5f5`
+    })
+
     console.log(footerIcons)
 
     document.querySelectorAll(".nav_menu--line").forEach((e) => {
@@ -148,15 +168,17 @@ setTimeout(() => {
 
 },11750);
 
-setTimeout(() => {
-    body.style.height = `150%`;
-},11000);
+// setTimeout(() => {
+//     body.classList.add(`body-load`);
+// },11000);
 
 setTimeout(() => {
-    aboutSection.style.display = `flex`
-    projectSection.style.display = `flex`
-    contactSection.style.display = `flex`
-    footerSection.style.display = `flex`
+    aboutSection.style.display = `flex`;
+    projectSection.style.display = `flex`;
+    contactSection.style.display = `flex`;
+    footerSection.style.display = `flex`;
+    body.classList.add(`body-load`);
+
 }, 11000);
 
 setTimeout(() => {
