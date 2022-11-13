@@ -111,10 +111,12 @@ homeLink.addEventListener("click", ()=> {
     footerSection.style.display = `flex`;
     body.style.height = `auto`
 
+    nav.classList.remove("nav-bg-light")
+    nav.classList.remove("nav-bg-dark")
+
     document.querySelector(".hero").style.display = `inline`
 
     document.querySelector(".about-page").style.display = `none`;
-    document.querySelector(".about-page").style.top = `-100vh`;
 
     nav.classList.remove("menu-active");
     body.classList.remove("body-menu-active");
@@ -125,6 +127,8 @@ aboutLink.forEach((e)=>{e.addEventListener("click", () => {
     nav.classList.remove("menu-active");
     body.classList.remove("body-menu-active")
     body.style.minHeight = `100vh`
+    nav.classList.remove("nav-bg-light")
+    nav.classList.remove("nav-bg-dark")
     closeMenu();
     document.querySelector(".about-page").style.display = `flex`;
     // document.querySelector(".about-page").style.top = `125px`;
