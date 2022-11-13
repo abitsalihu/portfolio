@@ -22,6 +22,10 @@ const footerIcons = document.querySelectorAll(".footer__con-icon");
 const navLinks = document.querySelectorAll(".nav_content_m-link");
 const navLine = document.querySelectorAll(".nav-line");
 const navContent = document.querySelector(".nav_content")
+const homeLink = document.querySelector(".home");
+const fMenuLine = document.querySelector(".f-m-line");
+const sMenuLine = document.querySelector(".s-m-line");
+
 
 //! ARRAY FOR ABOUT ME SECTION -- WORD CHANGE
 let words = ["look beautiful!", "are complex!", "tell a story!", "are thoughtful!", "show creativity!", "are unique!", "work well!", "don't suck!", "inspire people!"]
@@ -33,6 +37,21 @@ const changeWord = function(){
     let randomNumber = Math.round((Math.random() * 8));  
     let randomWord = words[randomNumber];
     aboutWord.textContent = `${randomWord}`
+
+}
+
+const closeMenu = function(){
+    nav.classList.remove("menu-active");
+    body.classList.remove("body-menu-active");
+    fMenuLine.classList.remove("menu-f-animation");
+    sMenuLine.classList.remove("menu-s-animation");
+
+    navLinks.forEach((e)=> {
+        e.style.animation = "hideStuff 0.05s ease"
+    })
+    setTimeout(()=>{
+        navContent.classList.remove("content-display")
+        },100)  
 
 }
 
@@ -64,7 +83,10 @@ window.addEventListener("scroll", function(){
 menu.addEventListener("click", () => {
     nav.classList.toggle("menu-active")
     body.classList.toggle("body-menu-active");
-    
+    fMenuLine.classList.toggle("menu-f-animation");
+    sMenuLine.classList.toggle("menu-s-animation");
+
+
     if(nav.classList.contains("menu-active")){
         setTimeout(()=>{
             navContent.classList.add("content-display")
@@ -79,18 +101,14 @@ menu.addEventListener("click", () => {
         document.querySelector("#nav_content_l-resume").style.animation = `loadRight 1s ease forwards`
 
         
-    } else {
-            navLinks.forEach((e)=> {
-                e.style.animation = "hideStuff 0.05s ease"
-            })
-            setTimeout(()=>{
-        navContent.classList.remove("content-display")
-    },100)
-
-        
+    }else {
+        closeMenu();
     }
-})
+})  
 
+homeLink.addEventListener("click", ()=> {
+    closeMenu();
+})
 changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     const mode =  e.target.getAttribute("data-mode");
 
