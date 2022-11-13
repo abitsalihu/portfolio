@@ -7,39 +7,6 @@ $black-color: #000000;
 $black-color: #f5f5f5;
 
 $purple-color: #7743DB;
-
-
-// @font-face {
-//   font-family: "Gunterz";
-//   src: url("/fonts/Gunterz-Medium.otf") format("opentype");
-// }
-
-// @font-face {
-//   font-family: "Kola";
-//   src: url("/fonts/BespokeStencil-Bold.otf") format("opentype");
-//   font-weight: normal;
-//   font-style: normal;
-// }
-
-// @font-face {
-//   font-family: "BlueCashews";
-//   src: url("/fonts/BlueCashews.otf") format("opentype");
-//   font-weight: normal;
-//   font-style: normal;
-// }
-// @font-face {
-//   font-family: "ClashDisplay";
-//   src: url("/fonts/ClashDisplay-Bold.otf") format("opentype");
-//   font-weight: normal;
-//   font-style: normal;
-// }
-
-// @font-face {
-//   font-family: "ClashDisplay-m";
-//   src: url("/fonts/ClashDisplay-Regular.otf") format("opentype");
-//   font-weight: normal;
-//   font-style: normal;
-// }
 *,
 *::before,
 *::after {
@@ -56,6 +23,7 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -638,6 +606,7 @@ link{
     padding-top: 25px;
     transition: all 1s ease;
     display: none;
+    // font-weight: 300;
     
     &-bcon{
       width: 85%;
@@ -664,12 +633,14 @@ link{
     }
     &_tech{
       width: 30%;
-      height: 100%;
-
       padding: 15px 0px;
-
+      // border: 1px solid blue;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      justify-content: space-between;
       &-knowledge{
-        
+        // border: 1px solid yellow;
         & > h5{
           font-weight: 300;
           font-size: 2rem;
@@ -679,7 +650,7 @@ link{
           display: flex;
           flex-wrap: wrap;
           // border: 1px solid red;
-          gap: 60px;
+          gap: 30px;
         }
       }
 
@@ -870,9 +841,8 @@ link{
   }
 
   .tech{
-    width: 60px;
-    height: 60px;
-    fill: $black-color;
+    width: 25px;
+    height: 25px;
   }
 
   .divider{
@@ -1191,19 +1161,7 @@ link{
 
 //! MEDIA QUERIES
 
-@media screen and(max-width:650px) {
-
-  .load{
-    &_con{
-      flex-direction: column;
-    }
-  }
-
-
-  .nav{
-    width: 100%;
-  }
-  
+@media screen and (max-width:415px) {
 
   .hero{
     margin-top: 270px;
@@ -1239,6 +1197,397 @@ link{
         }
       }
     }
+  }
+
+@media screen and (min-width:415px) {
+  .hero{
+    margin-top: 270px;
+    &_name{
+      height: 7.5%;
+      font-size: 1.2rem;
+      padding-left: 5px;
+      margin-bottom: 0px;
+    }
+    &_title{
+      width: 100%;
+      gap: 30px;
+        & > h1 {
+          font-size:7.5rem;
+          letter-spacing: 0px;
+        }
+        & > h2 {
+          font-size: 5.75rem;
+        }
+      }
+      &_footer{
+        margin-top: 50px;
+        padding: 5px;
+        &__left{
+          font-size: 1.5rem;
+        }
+        &__right{
+          align-self: center;
+          padding-right: 0px;
+          &--resume{
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+}
+
+@media screen and (min-width:515px) {
+  .hero{
+    margin-top: 270px;
+    &_name{
+      height: 7.5%;
+      font-size: 1.2rem;
+      padding-left: 5px;
+      margin-bottom: 0px;
+    }
+    &_title{
+      width: 100%;
+      gap: 30px;
+        & > h1 {
+          font-size:8.5rem;
+          letter-spacing: 0px;
+        }
+        & > h2 {
+          font-size: 6.75rem;
+        }
+      }
+      &_footer{
+        margin-top: 50px;
+        padding: 5px;
+        &__left{
+          font-size: 1.5rem;
+        }
+        &__right{
+          align-self: center;
+          padding-right: 0px;
+          &--resume{
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+}
+
+
+@media screen and (min-width:615px) {
+  .hero{
+    margin-top: 270px;
+    &_name{
+      height: 7.5%;
+      font-size: 1.2rem;
+      padding-left: 5px;
+      margin-bottom: 0px;
+    }
+    &_title{
+      width: 100%;
+      gap: 30px;
+        & > h1 {
+          font-size:10.5rem;
+          letter-spacing: 0px;
+        }
+        & > h2 {
+          font-size: 8.75rem;
+        }
+      }
+      &_footer{
+        margin-top: 50px;
+        padding: 5px;
+        &__left{
+          font-size: 1.5rem;
+        }
+        &__right{
+          align-self: center;
+          padding-right: 0px;
+          &--resume{
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+}
+
+@media screen and (min-width:715px) {
+  .hero{
+    margin-top: 270px;
+    &_name{
+      height: 7.5%;
+      font-size: 1.2rem;
+      padding-left: 5px;
+      margin-bottom: 0px;
+    }
+    &_title{
+      width: 100%;
+      gap: 30px;
+        & > h1 {
+          font-size:12.5rem;
+          letter-spacing: 0px;
+        }
+        & > h2 {
+          font-size: 9.75rem;
+        }
+      }
+      &_footer{
+        margin-top: 50px;
+        padding: 5px;
+        &__left{
+          font-size: 1.5rem;
+        }
+        &__right{
+          align-self: center;
+          padding-right: 0px;
+          &--resume{
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+}
+
+@media screen and (min-width:850px) {
+  .hero{
+    margin-top: 270px;
+    &_name{
+      height: 7.5%;
+      font-size: 1.2rem;
+      padding-left: 5px;
+      margin-bottom: 0px;
+    }
+    &_title{
+      width: 100%;
+      gap: 30px;
+        & > h1 {
+          font-size:14.5rem;
+          letter-spacing: 0px;
+        }
+        & > h2 {
+          font-size: 12.75rem;
+        }
+      }
+      &_footer{
+        margin-top: 50px;
+        padding: 5px;
+        &__left{
+          font-size: 1.5rem;
+        }
+        &__right{
+          align-self: center;
+          padding-right: 0px;
+          &--resume{
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+}
+
+@media screen and (min-width:1100px) {
+  .hero{
+    // border: 1px solid red;
+    // padding: 30px 0px;
+    margin-top: 170px;
+  
+  
+    color: $landing-color;
+    color: $black-color;
+    width: 85%;
+    height: 82.25%;
+    z-index: 2;
+    // font-family: "ClashDisplay";
+    overflow: hidden;
+  
+  
+  
+    &_name{
+      // overflow: hidden;
+      // border: 1px solid blue;
+      height: 7.5%;
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding-left: 25px;
+      margin-bottom: -25px;
+      font-weight: 100;
+      // color: $purple-color;
+      // color: #E0144C;
+      // color:#8D72E1;
+  
+      display: flex;
+      align-items: flex-end;
+    // font-family: "ClashDisplay";
+  
+  
+    // transition: all 1s ease;
+    // font-size: 72px;
+    background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+  
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+      // padding-bottom: 10px;
+      opacity: 0;
+      // display: none;
+      animation: loadDown 1s ease forwards 9.75s;
+  
+     
+  
+     
+      
+    }
+    &_title{
+      overflow: hidden;
+      
+      width: 100%;
+      height: 60%;
+      // border: 1px solid red;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      // font-family: "Gunterz";
+      font-family: 'DM Sans', sans-serif;
+      // font-family: "ClashDisplay";
+  
+  
+  
+      // font-size: 1rem;
+      & > h1 {
+        font-size: 18rem;
+        letter-spacing: 12px;
+        font-weight: 800;
+        // text-transform: uppercase;
+        // border: 1px solid red;
+        // display: none;
+        opacity: 0;
+        animation: loadLeft 1s ease forwards 9.75s; 
+      }
+      & > h2 {
+  
+        // border: 1px solid red;
+        font-size: 12rem;
+        margin-top: -50px;
+        // display: none;
+  
+        opacity: 0;
+        animation: loadRight 1s ease forwards 9.75s; 
+      }
+    
+      }
+      &_footer{
+        // border: 1px solid red;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        padding: 0px 25px;
+        height: 10%;
+        font-family: 'DM Sans', sans-serif;
+        margin-top: 50px;
+  
+        
+        &__left{
+          display: flex;
+          font-size: 2rem;
+          color: #797777;
+          font-weight: 100;
+  
+          gap: 5px;
+  
+          // display: none;
+          opacity: 0;
+          animation: loadUp .75s ease forwards 9.75s;
+        }
+  
+        &__right{
+  
+          align-self: flex-end;
+          // position: fixed;
+          // right: 130px;
+          // display: none;
+          padding-right: 50px;
+          opacity: 0;
+          animation: loadUp .75s ease forwards 9.75s;
+  
+          &--resume{
+            display: flex;
+            flex-direction: column;
+            border: none;
+            margin: 0;
+            background: none;
+            font-size: 3rem;
+            font-weight: 100;
+            color: #797777;
+            padding-bottom: -100px;
+            cursor: pointer;
+  
+            // transition: all .5s ease;
+  
+            & > a {
+              color: #797777;
+              text-decoration: none;
+              transition: all .5s ease;
+  
+            }
+  
+            &:hover, &:hover > a{
+  
+  
+              background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+  
+            &:hover > .line{
+              margin-top: -7px;
+              transform: scaleX(100%);
+              background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+  
+            }
+          }
+        }
+      }
+    }
+}
+@media screen and (max-width:690px) {
+
+  .load{
+    &_con{
+      flex-direction: column;
+    }
+  }
+
+
+  // .hero{
+  //   margin-top: 270px;
+  //   &_name{
+  //     height: 7.5%;
+  //     font-size: 1.2rem;
+  //     padding-left: 5px;
+  //     margin-bottom: 0px;
+  //   }
+  //   &_title{
+  //     width: 100%;
+  //     gap: 30px;
+  //       & > h1 {
+  //         font-size:6.5rem !important; 
+  //         letter-spacing: 0px;
+  //       }
+  //       & > h2 {
+  //         font-size: 5.5rem !important;
+  //       }
+  //     }
+  //   }
+
+  .nav{
+    width: 100%;
+  }
+  
+
+  
 
   .about{
       &__me{
