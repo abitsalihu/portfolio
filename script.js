@@ -27,7 +27,6 @@ const aboutLink = document.querySelectorAll(".about-link")
 const fMenuLine = document.querySelector(".f-m-line");
 const sMenuLine = document.querySelector(".s-m-line");
 
-console.log(aboutSection)
 let mode;
 
 //! ARRAY FOR ABOUT ME SECTION -- WORD CHANGE
@@ -36,25 +35,21 @@ let words = ["look beautiful!", "are complex!", "tell a story!", "are thoughtful
 
 // ! FUNCTIONS
 const changeWord = function(){
-    
     let randomNumber = Math.round((Math.random() * 8));  
     let randomWord = words[randomNumber];
     aboutWord.textContent = `${randomWord}`
-
 }
 
 const closeMenu = function(){
-   
+
     fMenuLine.classList.remove("menu-f-animation");
     sMenuLine.classList.remove("menu-s-animation");
-
     navLinks.forEach((e)=> {
         e.style.animation = "hideStuff 0.05s ease"
     })
     setTimeout(()=>{
         navContent.classList.remove("content-display")
         },100)  
-
 }
 
 
@@ -75,7 +70,6 @@ menu.addEventListener("click", () => {
     body.classList.toggle("body-menu-active");
     fMenuLine.classList.toggle("menu-f-animation");
     sMenuLine.classList.toggle("menu-s-animation");
-
     
     if(mode === "light-mode"){
         nav.classList.toggle("nav-bg-light");
@@ -95,8 +89,7 @@ menu.addEventListener("click", () => {
         
         document.querySelector("#nav_content_l-icons").style.animation = `loadLeft 1s ease forwards`
         document.querySelector("#nav_content_l-resume").style.animation = `loadRight 1s ease forwards`
-
-        
+      
     }else {
         nav.classList.remove("menu-active");
     body.classList.remove("body-menu-active");
@@ -105,19 +98,16 @@ menu.addEventListener("click", () => {
 })  
 
 homeLink.addEventListener("click", ()=> {
+
     aboutSection.style.display = `flex`
     projectSection.style.display = `flex`;
     contactSection.style.display = `flex`;
     footerSection.style.display = `flex`;
     body.style.height = `auto`
-
     nav.classList.remove("nav-bg-light")
     nav.classList.remove("nav-bg-dark")
-
     document.querySelector(".hero").style.display = `inline`
-
     document.querySelector(".about-page").style.display = `none`;
-
     nav.classList.remove("menu-active");
     body.classList.remove("body-menu-active");
     closeMenu();
@@ -131,7 +121,6 @@ aboutLink.forEach((e)=>{e.addEventListener("click", () => {
     nav.classList.remove("nav-bg-dark")
     closeMenu();
     document.querySelector(".about-page").style.display = `flex`;
-    // document.querySelector(".about-page").style.top = `125px`;
     document.querySelector(".hero").style.display = `none`
     aboutSection.style.display = `none`;
     projectSection.style.display = `none`;
@@ -141,25 +130,20 @@ aboutLink.forEach((e)=>{e.addEventListener("click", () => {
 })
 })
 changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
-     mode =  e.target.getAttribute("data-mode");
-
+    mode =  e.target.getAttribute("data-mode");
     e.target.style.display = "none";
-
 
     if(nav.classList.contains("menu-active")){
         if(mode === "light-mode"){
             nav.classList.toggle("nav-bg-light")
             nav.classList.toggle("nav-bg-dark")
-
         }else{
              nav.classList.toggle("nav-bg-dark")
             nav.classList.toggle("nav-bg-light")
-
         }
     }
 
     if(mode === "light-mode"){
-        console.log("dark-mode")
     changeModeBtn[1].style.display = "flex";
     nav.classList.remove("dark-mode")
     nav.classList.add(`${mode}`);
@@ -183,19 +167,14 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     contactSection.classList.remove("dark-mode");
     contactSection.classList.add(`${mode}`);
 
-    
-    // document.querySelector(".about-page").style.background = `#f5f5f5`;
     document.querySelector(".about-page").style.color = `#000000`;
     document.querySelectorAll(".tech").forEach((e) => {
         e.style.fill = `#000000`
     })
 
-
-
     footerIcons.forEach((e) => {
         e.style.fill = `#000000`
     });
-
 
     navLinks.forEach((e)=> {
         e.style.color = `#000000`
@@ -205,15 +184,10 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
         e.style.backgroundColor = '#000000'
     });
 
-    console.log(navLinks)
-
-  
     document.querySelectorAll(".nav_menu--line").forEach((e) => {
         e.style.backgroundColor = `#000000`
     })
     } else{
-        console.log("light-mode")
-
     changeModeBtn[0].style.display = "flex";
 
     nav.classList.remove("light-mode");
@@ -238,7 +212,6 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     contactSection.classList.remove("light-mode");
     contactSection.classList.add(`${mode}`);
 
-    // document.querySelector(".about-page").style.background = `#000000`;
     document.querySelector(".about-page").style.color = `#f5f5f5`;
     document.querySelectorAll(".tech").forEach((e) => {
         e.style.fill = `#f5f5f5`
@@ -256,13 +229,10 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
         e.style.backgroundColor = '#f5f5f5'
     });
 
-
     document.querySelectorAll(".nav_menu--line").forEach((e) => {
         e.style.backgroundColor = `#f5f5f5`
     })
-
     }
-
     return mode
 })});
 
@@ -276,22 +246,14 @@ setTimeout(() => {
     heroFooterLeft.style.animation = `none`
     developerTitle.style.animation = `none`
     heroFooterRight.style.animation = `none`
-
-
 },11750);
 
-// setTimeout(() => {
-//     body.classList.add(`body-load`);
-// },11000);
-
 setTimeout(() => {
-    console.log("worked" + aboutSection)
     aboutSection.style.display = `flex`;
     aboutSection.style.animation = `loadUp 1s ease forwards`;
 }, 9750);
 
 setTimeout(() => {
-    // aboutSection.style.display = `flex`;
     projectSection.style.display = `flex`;
     contactSection.style.display = `flex`;
     footerSection.style.display = `flex`;
