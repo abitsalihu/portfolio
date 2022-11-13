@@ -23,8 +23,11 @@ const navLinks = document.querySelectorAll(".nav_content_m-link");
 const navLine = document.querySelectorAll(".nav-line");
 const navContent = document.querySelector(".nav_content")
 const homeLink = document.querySelector(".home");
+const aboutLink = document.querySelectorAll(".about-link")
 const fMenuLine = document.querySelector(".f-m-line");
 const sMenuLine = document.querySelector(".s-m-line");
+
+console.log(aboutSection)
 
 
 //! ARRAY FOR ABOUT ME SECTION -- WORD CHANGE
@@ -41,8 +44,7 @@ const changeWord = function(){
 }
 
 const closeMenu = function(){
-    nav.classList.remove("menu-active");
-    body.classList.remove("body-menu-active");
+   
     fMenuLine.classList.remove("menu-f-animation");
     sMenuLine.classList.remove("menu-s-animation");
 
@@ -66,18 +68,6 @@ window.addEventListener("scroll", function(){
     frontEndTitle.style.transform = `translateX(-${userYposition * 3}px)`
     developerTitle.style.transform = `translateX(${userYposition * 3}px)`
     heroFooterRight.style.transform = `translateX(${userYposition}px)`
-
-
-    // aboutSection.style.transition = `transform ease`;
-    // aboutSection.style.transform = `translateY(-${userYposition}px)`
-    // projectSection.style.transition = `transform ease`;
-    // projectSection.style.transform = `translateY(-${userYposition}px)`
-
-    // contactSection.style.transition = `transform ease`;
-    // contactSection.style.transform = `translateY(-${userYposition}px)`
-
-    // footerSection.style.transform =`transform ease`;
-    // footerSection.style.transform = `translateY(-${userYposition}px)`
 })
 
 menu.addEventListener("click", () => {
@@ -102,12 +92,43 @@ menu.addEventListener("click", () => {
 
         
     }else {
+        nav.classList.remove("menu-active");
+    body.classList.remove("body-menu-active");
         closeMenu();
     }
 })  
 
 homeLink.addEventListener("click", ()=> {
+    aboutSection.style.display = `flex`
+    projectSection.style.display = `flex`;
+    contactSection.style.display = `flex`;
+    footerSection.style.display = `flex`;
+    body.style.height = `auto`
+
+    document.querySelector(".hero").style.display = `inline`
+
+    document.querySelector(".about-page").style.display = `none`;
+    document.querySelector(".about-page").style.top = `-100vh`;
+
+    nav.classList.remove("menu-active");
+    body.classList.remove("body-menu-active");
     closeMenu();
+})
+
+aboutLink.forEach((e)=>{e.addEventListener("click", () => {
+    nav.classList.remove("menu-active");
+    body.classList.remove("body-menu-active")
+    body.style.minHeight = `100vh`
+    closeMenu();
+    document.querySelector(".about-page").style.display = `flex`;
+    // document.querySelector(".about-page").style.top = `125px`;
+    document.querySelector(".hero").style.display = `none`
+    aboutSection.style.display = `none`;
+    projectSection.style.display = `none`;
+    contactSection.style.display = `none`;
+    footerSection.style.display = `none`;
+
+})
 })
 changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     const mode =  e.target.getAttribute("data-mode");
@@ -140,6 +161,12 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     contactSection.classList.add(`${mode}`);
 
     
+    document.querySelector(".about-page").style.background = `#f5f5f5`;
+    document.querySelector(".about-page").style.color = `#000000`;
+    document.querySelectorAll(".tech").forEach((e) => {
+        e.style.fill = `#000000`
+    })
+
 
 
     footerIcons.forEach((e) => {
@@ -188,6 +215,12 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     contactSection.classList.remove("light-mode");
     contactSection.classList.add(`${mode}`);
 
+    document.querySelector(".about-page").style.background = `#000000`;
+    document.querySelector(".about-page").style.color = `#f5f5f5`;
+    document.querySelectorAll(".tech").forEach((e) => {
+        e.style.fill = `#f5f5f5`
+    })
+
     footerIcons.forEach((e) => {
         e.style.fill = `#f5f5f5`
     })
@@ -209,6 +242,7 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
 })});
 
 
+
 // ! TIMEOUTS -- INTERVALS
 
 setTimeout(() => {
@@ -226,6 +260,7 @@ setTimeout(() => {
 // },11000);
 
 setTimeout(() => {
+    console.log("worked" + aboutSection)
     aboutSection.style.display = `flex`;
     aboutSection.style.animation = `loadUp 1s ease forwards`;
 }, 9750);

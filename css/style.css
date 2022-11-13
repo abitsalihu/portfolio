@@ -218,7 +218,8 @@ link {
         position: relative;
         opacity: 0;
         transition: all 1s ease;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        cursor: pointer; }
         .nav_content_m > a:hover > .nav-line, .nav_content_m > a:active:hover > .nav-line, .nav_content_m > a:focus:hover > .nav-line {
           transform: scaleX(100%); }
     .nav_content_l {
@@ -351,6 +352,46 @@ link {
         .about__me--link-btn:hover {
           transform: translateY(-5px); }
 
+.about-page {
+  z-index: 800;
+  width: 100%;
+  margin-top: 125px;
+  color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 2.5rem;
+  padding-top: 25px;
+  transition: all 1s ease;
+  display: none; }
+  .about-page-bcon {
+    width: 85%;
+    height: 100%;
+    display: flex; }
+  .about-page_content {
+    width: 70%;
+    height: 100%;
+    border-left: 1px solid #f5f5f5;
+    padding: 15px; }
+    .about-page_content > h4 {
+      font-weight: 100;
+      font-size: 1.5rem; }
+    .about-page_content > a {
+      font-size: 5rem;
+      font-weight: 800; }
+  .about-page_tech {
+    width: 30%;
+    height: 100%;
+    padding: 15px 0px; }
+    .about-page_tech-knowledge > h5 {
+      font-weight: 300;
+      font-size: 2rem; }
+    .about-page_tech-knowledge-con {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px; }
+
 .projects {
   position: relative;
   margin-top: 175px;
@@ -460,6 +501,11 @@ link {
   font-size: 8rem; }
   #contact-link > button {
     font-size: 10rem; }
+
+.tech {
+  width: 60px;
+  height: 60px;
+  fill: #f5f5f5; }
 
 .divider {
   background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
@@ -704,6 +750,43 @@ link {
   .about__me--link {
     display: flex;
     justify-content: center; }
+  .about-page {
+    align-items: center;
+    font-size: 1.7rem; }
+    .about-page-bcon {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse; }
+    .about-page_content {
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      border-left: 0px;
+      border-bottom: 1px solid #f5f5f5;
+      padding: 15px; }
+      .about-page_content > h4 {
+        font-weight: 100;
+        font-size: 1.5rem; }
+      .about-page_content > a {
+        font-size: 2rem;
+        font-weight: 800; }
+    .about-page_tech {
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      padding: 15px 0px; }
+      .about-page_tech-knowledge > h5 {
+        font-weight: 300;
+        font-size: 1.3rem; }
+      .about-page_tech-knowledge-con {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px; }
+  .tech {
+    width: 25px;
+    height: 25px; }
   .projects {
     margin-top: 50px;
     text-align: center;
