@@ -626,7 +626,7 @@ link{
 
 
   .about-page{
-
+    position: relative;
     z-index: 800;
     width: 100%;
     margin-top: 125px;
@@ -847,8 +847,8 @@ link{
     height: 92.5vh;
     position: absolute;
 
-    transition: all 1s ease ;
-    backdrop-filter: blur(60px);
+    transition: all .5s ease ;
+    // backdrop-filter: blur(50px);
   }
 
   .body-menu-active{
@@ -963,7 +963,13 @@ link{
     transform: rotate(-40deg) translateX(10px) scale(.75);
   }
 
-
+  .nav-bg-light {
+    background: #e4e3e3;
+  }
+  .nav-bg-dark {
+    background: #100e0e;
+  }
+  
 
 
 //! ANIMATIONS

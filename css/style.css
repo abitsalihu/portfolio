@@ -353,6 +353,7 @@ link {
           transform: translateY(-5px); }
 
 .about-page {
+  position: relative;
   z-index: 800;
   width: 100%;
   margin-top: 125px;
@@ -486,8 +487,7 @@ link {
 .menu-active {
   height: 92.5vh;
   position: absolute;
-  transition: all 1s ease;
-  backdrop-filter: blur(60px); }
+  transition: all .5s ease; }
 
 .body-menu-active {
   height: 100vh !important;
@@ -572,6 +572,12 @@ link {
 
 .menu-s-animation {
   transform: rotate(-40deg) translateX(10px) scale(0.75); }
+
+.nav-bg-light {
+  background: #e4e3e3; }
+
+.nav-bg-dark {
+  background: #100e0e; }
 
 @keyframes insideLeft {
   0% {

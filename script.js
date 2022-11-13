@@ -28,7 +28,7 @@ const fMenuLine = document.querySelector(".f-m-line");
 const sMenuLine = document.querySelector(".s-m-line");
 
 console.log(aboutSection)
-
+let mode;
 
 //! ARRAY FOR ABOUT ME SECTION -- WORD CHANGE
 let words = ["look beautiful!", "are complex!", "tell a story!", "are thoughtful!", "show creativity!", "are unique!", "work well!", "don't suck!", "inspire people!"]
@@ -76,6 +76,12 @@ menu.addEventListener("click", () => {
     fMenuLine.classList.toggle("menu-f-animation");
     sMenuLine.classList.toggle("menu-s-animation");
 
+    
+    if(mode === "light-mode"){
+        nav.classList.toggle("nav-bg-light");
+    } else{
+        nav.classList.toggle("nav-bg-dark");
+    }
 
     if(nav.classList.contains("menu-active")){
         setTimeout(()=>{
@@ -131,9 +137,22 @@ aboutLink.forEach((e)=>{e.addEventListener("click", () => {
 })
 })
 changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
-    const mode =  e.target.getAttribute("data-mode");
+     mode =  e.target.getAttribute("data-mode");
 
     e.target.style.display = "none";
+
+
+    if(nav.classList.contains("menu-active")){
+        if(mode === "light-mode"){
+            nav.classList.toggle("nav-bg-light")
+            nav.classList.toggle("nav-bg-dark")
+
+        }else{
+             nav.classList.toggle("nav-bg-dark")
+            nav.classList.toggle("nav-bg-light")
+
+        }
+    }
 
     if(mode === "light-mode"){
         console.log("dark-mode")
@@ -161,7 +180,7 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     contactSection.classList.add(`${mode}`);
 
     
-    document.querySelector(".about-page").style.background = `#f5f5f5`;
+    // document.querySelector(".about-page").style.background = `#f5f5f5`;
     document.querySelector(".about-page").style.color = `#000000`;
     document.querySelectorAll(".tech").forEach((e) => {
         e.style.fill = `#000000`
@@ -215,7 +234,7 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     contactSection.classList.remove("light-mode");
     contactSection.classList.add(`${mode}`);
 
-    document.querySelector(".about-page").style.background = `#000000`;
+    // document.querySelector(".about-page").style.background = `#000000`;
     document.querySelector(".about-page").style.color = `#f5f5f5`;
     document.querySelectorAll(".tech").forEach((e) => {
         e.style.fill = `#f5f5f5`
@@ -239,6 +258,8 @@ changeModeBtn.forEach(function(e){e.addEventListener("click", (e) => {
     })
 
     }
+
+    return mode
 })});
 
 
