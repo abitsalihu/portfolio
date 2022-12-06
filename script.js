@@ -78,6 +78,8 @@ menu.addEventListener("click", () => {
     }
 
     if(nav.classList.contains("menu-active")){
+        navContent.style.opacity = "1"
+
         setTimeout(()=>{
             navContent.classList.add("content-display")
         },1000)
@@ -92,9 +94,15 @@ menu.addEventListener("click", () => {
       
     }else {
         nav.classList.remove("menu-active");
-    body.classList.remove("body-menu-active");
+        body.classList.remove("body-menu-active");
         closeMenu();
+        setTimeout(()=>{
+            navContent.classList.remove("content-display")
+            },1000)  
+        navContent.style.opacity = "0"
+
     }
+
 })  
 
 homeLink.addEventListener("click", ()=> {

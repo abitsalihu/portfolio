@@ -138,6 +138,7 @@ link {
   justify-content: center; }
 
 .nav {
+  position: relative;
   overflow: hidden;
   width: 85%;
   height: 100px;
@@ -156,13 +157,17 @@ link {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(3.9px);
-  padding: 0px 10px; }
+  padding: 0px 10px;
+  isolation: isolate; }
   .nav_con {
+    position: absolute;
     width: 100%;
     height: 100px;
     display: flex;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    overflow: hidden;
+    z-index: 10; }
   .nav_logo {
     font-size: 3.5rem;
     font-weight: 800; }
@@ -190,6 +195,8 @@ link {
     .nav_lc--mode-btn:nth-child(2) {
       display: none; }
   .nav_content {
+    position: absolute;
+    bottom: 0px;
     width: 100%;
     height: 75vh;
     display: flex;
@@ -410,7 +417,6 @@ link {
     font-size: 6rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: #7743DB;
     background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
@@ -513,7 +519,6 @@ link {
   -webkit-text-fill-color: transparent; }
 
 .aboutWord {
-  color: #7743DB;
   background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

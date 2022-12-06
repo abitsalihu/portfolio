@@ -171,6 +171,7 @@ link{
 }
 
 .nav{
+  position: relative;
   overflow: hidden;
   width: 85%;
   height: 100px;
@@ -190,14 +191,19 @@ link{
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(3.9px);
   padding: 0px 10px;
+  isolation: isolate;
 
 
   &_con{
+    position: absolute;
+
     width: 100%;
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
+    z-index: 10;
   }
 
   &_logo{
@@ -205,6 +211,8 @@ link{
     font-weight: 800;
   }
   &_menu{
+    // position: absolute;
+    // bottom: 0px;
     width: 50px;
     height: 15%;
     display: flex;
@@ -239,6 +247,8 @@ link{
   }
 
   &_content{
+    position: absolute;
+    bottom: 0px;
     width: 100%;
     height: 75vh;
     display: flex;
@@ -516,7 +526,6 @@ link{
     font-size: 6rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: $purple-color;
     background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -657,7 +666,6 @@ link{
   }
 
   .aboutWord{
-    color: $purple-color;
     background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
