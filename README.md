@@ -5,7 +5,7 @@
   </tr>
   
   <tr>
-    <th>This website was created as part of the Internship challenge from the Star Labs Company.</th>
+    <th>This website was created to showcase my projects and skills!</th>
   </tr>
   
   <tr>
